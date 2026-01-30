@@ -26,46 +26,6 @@ Built for scalability, it utilizes **Pinecone** for serverless vector storage, *
 
 ---
 
-## 🏗️ System Architecture
-
-The application follows a modular **Micro-Service Architecture** pattern:
-
-```mermaid
-graph TD
-    subgraph Frontend [Streamlit UI]
-        UI[User Interface]
-        Auth[Auth Component]
-        Chat[Chat Interface]
-    end
-
-    subgraph Backend [Logic Layer]
-        Router[Query Router]
-        Embedder[Embedding Model]
-        Reranker[FlashRank Re-ranker]
-    end
-
-    subgraph Storage [Data Layer]
-        PC[(Pinecone Vector DB)]
-        DB[(Supabase PostgreSQL)]
-    end
-
-    subgraph External [AI Services]
-        LLM[Groq API (Llama 3)]
-    end
-
-    UI --> Auth
-    Auth --> DB
-    UI --> Chat
-    Chat --> Router
-    Router --> Embedder
-    Embedder --> PC
-    PC -- "Top 20 Matches" --> Reranker
-    Reranker -- "Top 5 + Context" --> LLM
-    LLM -- "Streaming Response" --> UI
-    Chat -- "Save History" --> DB
-```
-
----
 
 ## 📂 Project Structure
 
@@ -186,4 +146,5 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ---
 
 > **Author**: Devang Bhardwaj
-> **Deployed Demo**: [Link to Streamlit Cloud]
+> **Deployed Demo**: https://rag-bot-devang-bhardwaj.streamlit.app/
+
