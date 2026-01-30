@@ -1,0 +1,27 @@
+# Core Framework
+streamlit>=1.31.0
+
+# LangChain & LLM
+langchain>=0.1.0
+langchain-groq>=0.0.1
+langchain-community>=0.0.20
+
+# Vector Database
+chromadb>=0.4.22
+pinecone>=3.0.0
+
+# Ranking
+flashrank>=0.2.0
+
+# Embeddings (Free, runs locally)
+sentence-transformers>=2.2.2
+
+# Document Processing
+pypdf>=4.0.0
+python-docx>=1.1.0
+
+# Authentication
+supabase>=2.3.0
+
+# Utilities
+python-dotenv>=1.0.0
